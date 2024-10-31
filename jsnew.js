@@ -1,34 +1,7 @@
 /* const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
-
-function getHumanChoice() {
-    let humanChoice = "";
-    return humanChoice;
-};
-
-    
-rock.addEventListener('click', function (getHumanChoice) {
-    humanChoice = "rock";
-    console.log(humanChoice);
-    playRound();
-});
-    
-paper.addEventListener('click', () => {
-        humanChoice = "paper";
-        console.log(humanChoice);
-        playRound();
-    });
-    
-scissors.addEventListener('click', () => {
-        humanChoice = "scissors";
-        console.log(humanChoice);
-        playRound();
-    });
-
-
-
-
+*/
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random()* 3) + 1;
@@ -41,21 +14,18 @@ function getComputerChoice() {
     else {
         return "scissors";
     }
+};
 
+
+let humanChoice = '';
+
+function getHumanChoice(choice) {
+    humanChoice = choice;
+    console.log(humanChoice)
 };
 
 
 
-// old code for reference - delete when done
-/*
-function getHumanChoice () {
-    let humanChoice = prompt("Enter one of the following to play the game: Rock, Paper or Scissors");
-    humanChoice = humanChoice.toLowerCase();
-    return humanChoice;
-}
-*/
-
-/*
 const results = document.querySelector('.results');
 const resultText = document.createElement('p');
 
@@ -94,5 +64,3 @@ resultText.textContent = "your score: " + humanScore;
 resultText.textContent = "computer score: " + computerScore;
 resultText.textContent = "draws: " + drawScore;
 };
-
-*/ 
