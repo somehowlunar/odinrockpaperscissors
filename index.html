@@ -4,17 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function getComputerChoice() {
+    let computerChoice = Math.floor(Math.random()* 3) + 1;
+    if (computerChoice === 1){
+        return "rock";
+    }
+    else if (computerChoice === 2){
+        return "paper";
+    }
+    else {
+        return "scissors";
+    }
+};
+    </script>
     <script src="jsnew.js" defer ></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="getHumanChoice('rock')">Rock</button>
-    <button onclick="getHumanChoice('paper')">Paper</button>
-    <button onclick="getHumanChoice('scissors')">Scissors</button>
+    <button onclick="playRound('rock', getComputerChoice)">Rock</button>
+    <button onclick="playRound('paper', getComputerChoice)">Paper</button>
+    <button onclick="playRound('scissors', getComputerChoice)">Scissors</button>
 
-    <div class="results">
-        <h2>Results:</h2>
+<div class="container">
 
+    <div class="playerResults">
+        <h2>Your Score: </h2>
     </div>
+    <div class="computerResults">
+        <h2>Computer Score: </h2>  
+    </div>
+    <div class="drawResults">
+        <h2>Draws: </h2>
+    </div>
+</div>
 </body>
 </html>

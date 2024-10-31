@@ -3,39 +3,22 @@ const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
 */
 
-function getComputerChoice() {
-    let computerChoice = Math.floor(Math.random()* 3) + 1;
-    if (computerChoice === 1){
-        return "rock";
-    }
-    else if (computerChoice === 2){
-        return "paper";
-    }
-    else {
-        return "scissors";
-    }
-};
 
 
-let humanChoice = '';
-
-function getHumanChoice(choice) {
-    humanChoice = choice;
-    console.log(humanChoice)
-};
-
-
-
-const results = document.querySelector('.results');
-const resultText = document.createElement('p');
+const playerResults = document.querySelector('.playerResults');
+const computerResults = document.querySelector('.computerResults');
+const drawResults = document.querySelector('.drawResults');
+const playerResultText = document.createElement('p');
+const computerResultText = document.createElement('p');
+const drawResultText = document.createElement('p');
 
 let humanScore = 0;
 let computerScore = 0;
 let drawScore = 0;
 
-function playRound(humanChoice, computerChoice){
+function playRound(choice, computerChoice){
     computerChoice = getComputerChoice();
-    humanChoice = getHumanChoice();
+    humanChoice = choice;
 
     if (humanChoice === "rock" && computerChoice === "scissors") {
         humanScore++;
@@ -59,8 +42,12 @@ function playRound(humanChoice, computerChoice){
         drawScore++
     }
 
-results.appendChild(resultText);
-resultText.textContent = "your score: " + humanScore;
-resultText.textContent = "computer score: " + computerScore;
-resultText.textContent = "draws: " + drawScore;
+playerResults.appendChild(playerResultText);
+playerResultText.textContent = humanScore;
+
+computerResults.appendChild(computerResultText);
+computerResultText.textContent = computerScore;
+
+drawResults.appendChild(drawResultText);
+drawResultText.textContent = drawScore;
 };

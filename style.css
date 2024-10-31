@@ -12,3 +12,7 @@ button {
 button:hover {
     background-color: aqua;
 }
+
+.container {
+    font-size: 30px;
+}
